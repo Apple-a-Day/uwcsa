@@ -1,0 +1,14 @@
+@import "Variables.scss";
+
+.navItemContainer {
+  margin: 8px 16px;
+}
+
+.navItem {
+  font-size: 16px;
+}
+
+.selected {
+  padding: 0px 0px 4px 0px;
+  border-bottom: 4px solid $hibiscus;
+}

@@ -1,33 +1,30 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import "./styles/App.scss";
 
+// NOTE: Upcoming will be our home page
 const App = () => {
   return (
     <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/topics">Topics</Link>
-          </li>
-        </ul>
+      <div className="app">
+        <NavBar />
 
-        <hr />
-
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/topics" component={Topics} />
+        <Switch>
+          <Route path="/upcoming" component={Upcoming} />
+          <Route path="/about" component={About} />
+          <Route path="/events" component={Events} />
+          <Route path="/team" component={Team} />
+          <Route path="/sponsors" component={Sponsors} />
+          <Route path="/contact" component={Contact} />
+          <Redirect to="/upcoming" />
+        </Switch>
       </div>
     </Router>
   );
 }
 
-const Home = () => {
+const Upcoming = () => {
   return (
     <div>
       <h2>Home</h2>
@@ -43,38 +40,70 @@ const About = () => {
   );
 }
 
-const Topics = ({ match }) => {
+const Events = () => {
   return (
     <div>
-      <h2>Topics</h2>
-      <ul>
-        <li>
-          <Link to={`${match.url}/rendering`}>Rendering with React</Link>
-        </li>
-        <li>
-          <Link to={`${match.url}/components`}>Components</Link>
-        </li>
-        <li>
-          <Link to={`${match.url}/props-v-state`}>Props v. State</Link>
-        </li>
-      </ul>
-
-      <Route path={`${match.path}/:topicId`} component={Topic} />
-      <Route
-        exact
-        path={match.path}
-        render={() => <h3>Please select a topic.</h3>}
-      />
+      <h2>Events</h2>
     </div>
   );
 }
 
-const Topic = ({ match }) => {
+const Team = () => {
   return (
     <div>
-      <h3>{match.params.topicId}</h3>
+      <h2>Team</h2>
     </div>
   );
 }
+
+const Sponsors = () => {
+  return (
+    <div>
+      <h2>Sponsors</h2>
+    </div>
+  );
+}
+
+const Contact = () => {
+  return (
+    <div>
+      <h2>Contact</h2>
+    </div>
+  );
+}
+
+// const Topics = ({ match }) => {
+//   return (
+//     <div>
+//       <h2>Topics</h2>
+//       <ul>
+//         <li>
+//           <Link to={`${match.url}/rendering`}>Rendering with React</Link>
+//         </li>
+//         <li>
+//           <Link to={`${match.url}/components`}>Components</Link>
+//         </li>
+//         <li>
+//           <Link to={`${match.url}/props-v-state`}>Props v. State</Link>
+//         </li>
+//       </ul>
+
+//       <Route path={`${match.path}/:topicId`} component={Topic} />
+//       <Route
+//         exact
+//         path={match.path}
+//         render={() => <h3>Please select a topic.</h3>}
+//       />
+//     </div>
+//   );
+// }
+
+// const Topic = ({ match }) => {
+//   return (
+//     <div>
+//       <h3>{match.params.topicId}</h3>
+//     </div>
+//   );
+// }
 
 export default App;

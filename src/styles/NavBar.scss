@@ -1,0 +1,21 @@
+.navBarDiv {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+}
+
+.navLogoImg {
+  height: 100%;
+  object-fit: contain;
+}
+
+.navItemsRowDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.navItemsContainerDiv {
+  display: flex;
+  align-items: center;
+}
+

@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/uwcsa/static/js/runtime~main.bd3ec780.js"
   },
   {
-    "revision": "87979acf247746061038",
-    "url": "/uwcsa/static/js/main.e76bb3db.chunk.js"
+    "revision": "60eb729f98a02a94d7ae",
+    "url": "/uwcsa/static/js/main.4a7c820e.chunk.js"
   },
   {
     "revision": "5839e74903f2ea8ad0a2",
     "url": "/uwcsa/static/js/2.d4f06267.chunk.js"
   },
   {
-    "revision": "87979acf247746061038",
+    "revision": "60eb729f98a02a94d7ae",
     "url": "/uwcsa/static/css/main.3aa4e1ef.chunk.css"
   },
   {
-    "revision": "bd3e53752b5f201ab65d5a0e8dc88fad",
+    "revision": "e32244fa105b80944edd535d68fbab90",
     "url": "/uwcsa/index.html"
   }
 ];
